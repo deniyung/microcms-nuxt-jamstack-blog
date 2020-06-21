@@ -2,6 +2,7 @@
   <main class="main">
     <h1 class="title">{{ title }}</h1>
     <p class="publishedAt">{{ publishedAt }}</p>
+    <p class="category">{{ category && category.name }}</p>
     <div class="post" v-html="body"></div>
   </main>
 </template>
@@ -41,7 +42,7 @@ export default {
     font-size: 30px;
     font-weight: bold;
     margin: 40px 0 20px;
-    background-color: #eee;
+    background-color: #ccc;
     padding: 10px 20px;
     border-radius: 5px;
     color: red;
