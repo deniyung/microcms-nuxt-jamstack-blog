@@ -44,6 +44,7 @@ export default {
     background-color: #eee;
     padding: 10px 20px;
     border-radius: 5px;
+    color: red;
   }
 
   & > h2 {

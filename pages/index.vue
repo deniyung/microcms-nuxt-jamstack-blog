@@ -1,5 +1,4 @@
 <template>
-  <h1>記事一覧</h1>
   <ul>
     <li v-for="content in contents" :key="content.id">
       <nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link>
