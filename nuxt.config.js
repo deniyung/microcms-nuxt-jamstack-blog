@@ -1,12 +1,12 @@
 import axios from "axios";
 
 export default {
-  target: "static",
+  target: process.env.NODE_ENV === "production" ? "static" : "server",
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: "universal",
+  mode: process.env.NODE_ENV === "production" ? "universal" : "spa",
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -59,6 +59,7 @@ export default {
           }))
         );
       return pages;
-    }
+    },
+    fallback: process.env.NODE_ENV === "production" ? false : true
   }
 };
