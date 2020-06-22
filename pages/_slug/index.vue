@@ -11,9 +11,11 @@
 import axios from "axios";
 
 export default {
-  async asyncData({ params }) {
+  async asyncData({ params, query }) {
     const { data } = await axios.get(
-      `https://deni.microcms.io/api/v1/blog/${params.slug}`,
+      `https://deni.microcms.io/api/v1/blog/${params.slug}${
+        query.draftKey !== undefined ? `?draftKey=${query.draftKey}` : ""
+      }`,
       {
         headers: { "X-API-KEY": "87ccf72c-a283-4116-883f-221575df1375" }
       }
